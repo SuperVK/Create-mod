@@ -139,7 +139,7 @@ public class BeltMovementHandler {
 		Vec3 centering = Vec3.atLowerCornerOf(centeringDirection).scale(diffCenter * Math.min(Math.abs(movementSpeed), .1f) * 4);
 
 		if (!(entityIn instanceof LivingEntity)
-			|| ((LivingEntity) entityIn).zza == 0 && ((LivingEntity) entityIn).xxa == 0)
+			|| ((LivingEntity) entityIn).zza == 0 && ((LivingEntity) entityIn).xxa == 0) {}
 		//	movement = movement.add(centering);
 
 		float step = entityIn.maxUpStep;
