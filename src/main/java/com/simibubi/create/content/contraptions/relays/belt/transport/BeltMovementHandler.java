@@ -95,7 +95,7 @@ public class BeltMovementHandler {
 
 		// Lock entities in place
 		boolean isPlayer = entityIn instanceof Player;
-		if (entityIn instanceof LivingEntity && !isPlayer) 
+		if (entityIn instanceof LivingEntity && !isPlayer)
 			((LivingEntity) entityIn).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 1, false, false));
 
 		final Direction beltFacing = blockState.getValue(BlockStateProperties.HORIZONTAL_FACING);
@@ -139,11 +139,11 @@ public class BeltMovementHandler {
 		Vec3 centering = Vec3.atLowerCornerOf(centeringDirection).scale(diffCenter * Math.min(Math.abs(movementSpeed), .1f) * 4);
 
 		if (!(entityIn instanceof LivingEntity)
-			|| ((LivingEntity) entityIn).zza == 0 && ((LivingEntity) entityIn).xxa == 0)
-			movement = movement.add(centering);
-		
+			|| ((LivingEntity) entityIn).zza == 0 && ((LivingEntity) entityIn).xxa == 0) {}
+		//	movement = movement.add(centering);
+
 		float step = entityIn.maxUpStep;
-		if (!isPlayer) 
+		if (!isPlayer)
 			entityIn.maxUpStep = 1;
 
 		// Entity Collisions
@@ -176,7 +176,7 @@ public class BeltMovementHandler {
 		} else {
 			entityIn.move(SELF, movement);
 		}
-		
+
 		entityIn.setOnGround(true);
 
 		if (!isPlayer)
@@ -192,7 +192,7 @@ public class BeltMovementHandler {
 			entityIn.setDeltaMovement(movement);
 			entityIn.hurtMarked = true;
 		}
-		
+
 	}
 
 	public static boolean shouldIgnoreBlocking(Entity me, Entity other) {
